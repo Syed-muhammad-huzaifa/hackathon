@@ -31,7 +31,18 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- **I. Physical AI in the Real World**: Does the plan include validation on physical hardware?
+- **II. Humanoid Robotics Fundamentals**: Does the design respect whole-body control and stability principles?
+- **III. ROS 2 Ecosystem**: Are all software components designed as ROS 2 packages with standard interfaces?
+- **IV. URDF for Humanoids**: Is the robot model defined in a modular URDF?
+- **V. Digital Twin Simulation**: Is a high-fidelity digital twin included for testing?
+- **VI. Advanced Sensor Integration**: Does the system integrate LiDAR, depth cameras, and an IMU?
+- **VII. NVIDIA Isaac Sim Integration**: If high-fidelity simulation is needed, is Isaac Sim used?
+- **VIII. Autonomous Navigation**: Does the navigation stack use VSLAM and Nav2?
+- **IX. Vision-Language-Action Systems**: Is the architecture centered around a VLA model?
+- **X. Voice Command Interface**: Is a Whisper-based voice interface included?
+- **XI. Natural-Language Cognitive Planning**: Is high-level planning driven by a natural language engine?
+- **XII. Autonomous Humanoid Capstone**: Does this work directly contribute to the final capstone project?
 
 ## Project Structure
 
