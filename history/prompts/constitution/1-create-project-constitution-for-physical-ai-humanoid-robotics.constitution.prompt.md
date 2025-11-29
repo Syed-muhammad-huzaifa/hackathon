@@ -10,6 +10,7 @@ branch: main
 user: PMLS
 command: /sp.constitution
 labels: [constitution, robotics]
+
 links:
   spec: null
   ticket: null
