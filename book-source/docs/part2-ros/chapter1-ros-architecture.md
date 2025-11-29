@@ -1,5 +1,6 @@
 ---
-title: 'Chapter 1: ROS Architecture'
+import RosQuiz from '@site/src/components/RosQuiz';
+
 ---
 
 # Chapter 1: The ROS 2 Architecture
