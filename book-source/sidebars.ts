@@ -23,6 +23,14 @@ const sidebars: SidebarsConfig = {
         'chapter1/section1-physical-ai',
         'chapter1/section2-digital-vs-physical-ai',
         'chapter1/section3-ai-in-bodies',
+        'chapter1/section4-real-world-constraints',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'PART II - The robotic nervous system (ROS 2)',
+      items: [
+        'part2-ros/chapter1-ros-architecture',
       ],
     },
   ],
