@@ -31,6 +31,7 @@ const sidebars: SidebarsConfig = {
       label: 'Part 2: The Robotic Nervous System (ROS 2)',
       items: [
         'part2-ros/chapter1-ros-architecture',
+        'part2-ros/chapter2-python-ros2-packages',
       ],
     },
   ],

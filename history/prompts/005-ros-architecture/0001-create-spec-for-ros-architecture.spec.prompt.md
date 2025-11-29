@@ -1,3 +1,4 @@
+
 ---
 id: 0001
 title: Create spec for ROS Architecture
