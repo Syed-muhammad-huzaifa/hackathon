@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
       label: 'Chapter 1: Introduction to Physical AI',
       items: [
         'chapter1/section1-physical-ai',
+        'chapter1/section2-digital-vs-physical-ai',
       ],
     },
   ],
