@@ -211,6 +211,7 @@ See `.specify/memory/constitution.md` for code quality, testing, performance, se
 
 ## Active Technologies
 - Markdown + None (001-create-book-preface)
+- Physics Simulation (Gazebo & Unity)
 
 ## Recent Changes
 - 001-create-book-preface: Added Markdown + None

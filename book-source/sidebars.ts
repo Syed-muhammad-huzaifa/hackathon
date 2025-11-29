@@ -34,6 +34,13 @@ const sidebars: SidebarsConfig = {
         'part2-ros/chapter2-python-ros2-packages',
         'part2-ros/chapter3-urdf',
       ],
+    },
+    {
+      type: 'category',
+      label: 'Part 3: The Digital Twin (Gazebo & Unity)',
+      items: [
+        'part3-digital-twin/chapter1-physics-simulation',
+      ],
     },  ],
 
   // But you can create a sidebar manually
