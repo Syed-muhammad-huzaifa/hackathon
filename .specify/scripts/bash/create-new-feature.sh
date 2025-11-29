@@ -5,6 +5,7 @@ set -e
 JSON_MODE=false
 SHORT_NAME=""
 BRANCH_NUMBER=""
+FEATURE_DESCRIPTION_FILE=""
 ARGS=()
 i=1
 while [ $i -le $# ]; do
@@ -20,7 +21,6 @@ while [ $i -le $# ]; do
             fi
             i=$((i + 1))
             next_arg="${!i}"
-            # Check if the next argument is another option (starts with --)
             if [[ "$next_arg" == --* ]]; then
                 echo 'Error: --short-name requires a value' >&2
                 exit 1
@@ -40,17 +40,32 @@ while [ $i -le $# ]; do
             fi
             BRANCH_NUMBER="$next_arg"
             ;;
+        --description-file)
+            if [ $((i + 1)) -gt $# ]; then
+                echo 'Error: --description-file requires a value' >&2
+                exit 1
+            fi
+            i=$((i + 1))
+            next_arg="${!i}"
+            if [[ "$next_arg" == --* ]]; then
+                echo 'Error: --description-file requires a value' >&2
+                exit 1
+            fi
+            FEATURE_DESCRIPTION_FILE="$next_arg"
+            ;;
         --help|-h) 
-            echo "Usage: $0 [--json] [--short-name <name>] [--number N] <feature_description>"
+            echo "Usage: $0 [--json] [--short-name <name>] [--number N] [--description-file <path>] <feature_description>"
             echo ""
             echo "Options:"
             echo "  --json              Output in JSON format"
             echo "  --short-name <name> Provide a custom short name (2-4 words) for the branch"
             echo "  --number N          Specify branch number manually (overrides auto-detection)"
+            echo "  --description-file <path> Read feature description from a file"
             echo "  --help, -h          Show this help message"
             echo ""
             echo "Examples:"
             echo "  $0 'Add user authentication system' --short-name 'user-auth'"
+            echo "  $0 --description-file /tmp/desc.txt --short-name 'user-auth'"
             echo "  $0 'Implement OAuth2 integration for API' --number 5"
             exit 0
             ;;
@@ -61,7 +76,15 @@ while [ $i -le $# ]; do
     i=$((i + 1))
 done
 
-FEATURE_DESCRIPTION="${ARGS[*]}"
+if [ -n "$FEATURE_DESCRIPTION_FILE" ]; then
+    if [ ! -f "$FEATURE_DESCRIPTION_FILE" ]; then
+        echo "Error: Description file not found at $FEATURE_DESCRIPTION_FILE" >&2
+        exit 1
+    fi
+    FEATURE_DESCRIPTION=$(cat "$FEATURE_DESCRIPTION_FILE")
+else
+    FEATURE_DESCRIPTION="${ARGS[*]}"
+fi
 if [ -z "$FEATURE_DESCRIPTION" ]; then
     echo "Usage: $0 [--json] [--short-name <name>] [--number N] <feature_description>" >&2
     exit 1

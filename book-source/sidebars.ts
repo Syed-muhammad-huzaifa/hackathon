@@ -32,9 +32,9 @@ const sidebars: SidebarsConfig = {
       items: [
         'part2-ros/chapter1-ros-architecture',
         'part2-ros/chapter2-python-ros2-packages',
+        'part2-ros/chapter3-urdf',
       ],
-    },
-  ],
+    },  ],
 
   // But you can create a sidebar manually
   /*
