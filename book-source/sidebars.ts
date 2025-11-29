@@ -28,7 +28,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'PART II - The robotic nervous system (ROS 2)',
+      label: 'Part 2: The Robotic Nervous System (ROS 2)',
       items: [
         'part2-ros/chapter1-ros-architecture',
       ],
