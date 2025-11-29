@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'chapter1/section1-physical-ai',
         'chapter1/section2-digital-vs-physical-ai',
+        'chapter1/section3-ai-in-bodies',
       ],
     },
   ],
