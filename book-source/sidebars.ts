@@ -25,6 +25,13 @@ const sidebars: SidebarsConfig = {
         'chapter1/section3-ai-in-bodies',
       ],
     },
+    {
+      type: 'category',
+      label: 'Part 2: The Robotic Nervous System (ROS 2)',
+      items: [
+        'part2-ros/chapter1-ros-architecture',
+      ],
+    },
   ],
 
   // But you can create a sidebar manually
