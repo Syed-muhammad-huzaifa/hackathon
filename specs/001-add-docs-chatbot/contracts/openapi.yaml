@@ -1,0 +1,71 @@
+openapi: 3.0.3
+info:
+  title: Floating Docs Chatbot API
+  version: 0.1.0
+paths:
+  /chat/query:
+    post:
+      summary: General docs question
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                page_url:
+                  type: string
+                user_preferences:
+                  type: object
+              required: [message]
+      responses:
+        '200':
+          description: Answer with citations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  answer:
+                    type: string
+                  citations:
+                    type: array
+                    items:
+                      type: string
+                  used_context:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        source_type:
+                          type: string
+                        source_ref:
+                          type: string
+                  fallback:
+                    type: boolean
+        '422':
+          description: Invalid input
+  /chat/selection:
+    post:
+      summary: Selected-text scoped question
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                selected_text:
+                  type: string
+                page_url:
+                  type: string
+              required: [message, selected_text]
+      responses:
+        '200':
+          description: Answer scoped to selection
+        '422':
+          description: Invalid input

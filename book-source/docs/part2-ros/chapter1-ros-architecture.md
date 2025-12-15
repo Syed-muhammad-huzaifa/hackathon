@@ -1,9 +1,5 @@
 import RosQuiz from '@site/src/components/RosQuiz';
 
----
-title: 'Chapter 1: ROS Architecture'
----
-
 # Chapter 1: The ROS 2 Architecture
 
 Welcome to Part II of our journey into Physical AI. We're now moving from the "what" and "why" of robotics to the "how." The single most important tool for building modern robots is the Robot Operating System (ROS), specifically ROS 2. Think of it as the central nervous system for a robot. It’s the framework that allows all the different parts—sensors, motors, and decision-making algorithms—to communicate and work together as a single, coherent system. ROS provides services designed for a heterogeneous computer cluster, including hardware abstraction, low-level device control, implementation of common functionality, message-passing between processes, and package management. This chapter will explain the core architectural components of ROS, focusing on ROS 2, which offers improved real-time performance, security, and multi-robot capabilities compared to its predecessor.
