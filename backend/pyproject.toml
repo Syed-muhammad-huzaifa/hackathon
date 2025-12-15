@@ -1,0 +1,16 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-select = ["I"]  # isort
+src = ["backend"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_unused_configs = true
+ignore_missing_imports = true
+strict_optional = true
+disable_error_code = ["attr-defined"]

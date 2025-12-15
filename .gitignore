@@ -8,6 +8,15 @@ build/
 # Docusaurus specific (often in .gitignore already for book-source)
 book-source/build/
 book-source/.docusaurus/
+.codex/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+dist/
 
 # Universal
 .DS_Store
