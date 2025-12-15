@@ -2,71 +2,69 @@
 ---
 Sync Impact Report
 ---
-Version change: 0.0.0 -> 1.0.0
+Version change: 1.0.0 -> 2.0.0
 Modified principles:
-- PRINCIPLE_1_NAME -> I. Physical AI in the Real World
-- PRINCIPLE_2_NAME -> II. Humanoid Robotics Fundamentals
-- PRINCIPLE_3_NAME -> III. ROS 2 Ecosystem
-- PRINCIPLE_4_NAME -> IV. URDF for Humanoids
-- PRINCIPLE_5_NAME -> V. Digital Twin Simulation
-- PRINCIPLE_6_NAME -> VI. Advanced Sensor Integration
+- I. Physical AI in the Real World -> I. Grounded Answers & Sources
+- II. Humanoid Robotics Fundamentals -> II. Mode Discipline (RAG vs Selected Text)
+- III. ROS 2 Ecosystem -> III. Book-Only Knowledge Base
+- IV. URDF for Humanoids -> IV. Indexing & Metadata Integrity
+- V. Digital Twin Simulation -> V. Frontend UX & Chat Surface
+- VI. Advanced Sensor Integration -> VI. Non-Negotiable Stack & Deployment
 Added sections:
+- VII. Security & Secrets Hygiene
+- VIII. Quality, Operability & README
+- IX. Personalization & Urdu (Bonus Features)
+- X. Compliance & Change Management
+Removed sections:
 - VII. NVIDIA Isaac Sim Integration
 - VIII. Autonomous Navigation
 - IX. Vision-Language-Action Systems
 - X. Voice Command Interface
 - XI. Natural-Language Cognitive Planning
 - XII. Autonomous Humanoid Capstone
-Removed sections: None
 Templates requiring updates:
 - ✅ .specify/templates/plan-template.md
-- ✅ .specify/templates/spec-template.md
-- ✅ .specify/templates/tasks-template.md
+- ✅ .specify/templates/spec-template.md (reviewed: no principle references to update)
+- ✅ .specify/templates/tasks-template.md (reviewed: sample text only; no principle references)
 Follow-up TODOs: None
 -->
-# Physical AI & Humanoid Robotics Constitution
+# Docusaurus Book + RAG Chatbot Constitution
 
 ## Core Principles
 
-### I. Physical AI in the Real World
-All systems, models, and algorithms must be designed, validated, and optimized for deployment on physical hardware in real-world, unstructured environments. Simulation is a tool for development, not a substitute for physical validation.
+### I. Grounded Answers & Sources
+All responses MUST be grounded strictly in allowed context. If the answer is not found, state that explicitly and ask a clarifying question. Every answer MUST include sources with chapter/heading/anchor and chunk_id(s) (or selected spans).
 
-### II. Humanoid Robotics Fundamentals
-Implementations must adhere to established principles of humanoid robotics, including whole-body control, dynamic stability (e.g., Zero Moment Point), and compliant motion. Kinematic and dynamic models must be accurate and robustly handled.
+### II. Mode Discipline (RAG vs Selected Text)
+Strict modes are absolute. In RAG mode, respond only with retrieved book chunks from Qdrant. In Selected-Text mode, respond only with the provided selection; if absent, reply “Not in selected text” and request the needed text. No external knowledge is allowed.
 
-### III. ROS 2 Ecosystem
-All software components MUST be implemented as ROS 2 packages. Communication between components MUST use ROS 2 topics, services, and actions, adhering to community-standard message types where available.
+### III. Book-Only Knowledge Base
+The Docusaurus book markdown is the sole knowledge source. Content updates MUST flow into the retrieval index; no shadow knowledge bases or ad-hoc notes are permitted.
 
-### IV. URDF for Humanoids
-All humanoid robot models MUST be defined using the Unified Robot Description Format (URDF), with accurate inertial, visual, and collision properties. XACRO is preferred for modularity and reusability.
+### IV. Indexing & Metadata Integrity
+Chunk by headings and store stable metadata: route, heading, anchor, and chunk_id. Provide and maintain a documented command or script to rebuild and upsert embeddings to Qdrant. Retrieval responses MUST surface chunk identifiers.
 
-### V. Digital Twin Simulation
-Every physical robot assembly MUST have a corresponding high-fidelity digital twin in a supported simulator (Gazebo or Unity). This twin is mandatory for regression testing, validation of algorithms, and generating synthetic data.
+### V. Frontend UX & Chat Surface
+The docs experience is mobile-first, readable, and accessible: Inter for body, JetBrains Mono for code, 16px base, ~1.6 line-height, with light and dark modes. The chat is a floating button and drawer on desktop and a bottom sheet on mobile, with mode toggle, selected-text preview, sources, and clear loading and error states.
 
-### VI. Advanced Sensor Integration
-Systems must robustly integrate and fuse data from a multi-modal sensor suite, including at a minimum: 3D LiDAR, one or more depth cameras, and an Inertial Measurement Unit (IMU).
+### VI. Non-Negotiable Stack & Deployment
+Book: Docusaurus deployed to GitHub Pages. Backend: FastAPI. Vector DB: Qdrant Cloud (Free Tier). Database: Neon Serverless Postgres. Auth (if present): better-auth. Stack substitutions require a formal amendment.
 
-### VII. NVIDIA Isaac Sim Integration
-For high-fidelity physics and photo-realistic rendering tasks, NVIDIA Isaac Sim is the designated simulation platform. Projects requiring advanced GPU-accelerated simulation MUST integrate with Isaac Sim and its associated ROS/ROS 2 bridges.
+### VII. Security & Secrets Hygiene
+Secure by default: no secrets in the frontend or static assets; collect only minimal user data. Environment variables and credentials stay server-side. Never commit secrets.
 
-### VIII. Autonomous Navigation
-Navigation stacks MUST utilize modern VSLAM (Visual Simultaneous Localization and Mapping) for state estimation and Nav2 for path planning, obstacle avoidance, and lifecycle management.
+### VIII. Quality, Operability & README
+The deployed book MUST remain live on GitHub Pages. The README MUST cover setup, env vars, indexing, deploy, and troubleshooting. UI must be responsive with explicit loading and error states. No committed secrets—CI/CD gates should enforce this.
 
-### IX. Vision-Language-Action Systems
-The cognitive architecture must be built around a Vision-Language-Action (VLA) model. The system must be able to perceive its environment, understand natural language instructions related to that environment, and generate executable action plans.
+### IX. Personalization & Urdu (Bonus Features)
+If authentication is enabled, collect minimal software and hardware background at signup and store in Neon. Logged-in users may personalize chapters (with a revert path) and translate chapters to Urdu via a toggle that preserves code blocks unchanged.
 
-### X. Voice Command Interface
-Human-robot interaction MUST include a voice command interface. Whisper is the designated speech-to-text engine for transcribing natural language commands.
-
-### XI. Natural-Language Cognitive Planning
-High-level task planning and execution MUST be driven by a cognitive engine capable of interpreting and reasoning about complex, multi-step commands expressed in natural language.
-
-### XII. Autonomous Humanoid Capstone
-All principles culminate in the capstone objective: to develop a fully autonomous humanoid robot capable of performing complex, goal-oriented tasks in a dynamic human environment, integrating perception, manipulation, and cognitive reasoning.
+### X. Compliance & Change Management
+All code, specs, tasks, and docs MUST align with this Constitution. Any deviation requires written justification, review, and a migration plan before merging.
 
 ## Governance
 This Constitution is the single source of truth for all technical decisions within the project. It supersedes all other practices, conventions, or individual preferences. All project artifacts, including code, specifications, and documentation, MUST comply with these principles.
 
-Amendments to this Constitution require a formal proposal, review, and a documented migration plan for existing systems. All pull requests and design reviews must explicitly verify compliance with these principles. Complexity or deviation from a principle must be rigorously justified and approved.
+Amendments to this Constitution require a formal proposal, review, and a documented migration plan for existing systems. All pull requests and design reviews must explicitly verify compliance with these principles. Complexity or deviation from a principle must be rigorously justified and approved. Version bumps follow semantic versioning: MAJOR for incompatible principle changes, MINOR for new principles or materially expanded guidance, PATCH for clarifications.
 
-**Version**: 1.0.0 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-11-29
+**Version**: 2.0.0 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-12-15

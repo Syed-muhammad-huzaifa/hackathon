@@ -31,18 +31,16 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-- **I. Physical AI in the Real World**: Does the plan include validation on physical hardware?
-- **II. Humanoid Robotics Fundamentals**: Does the design respect whole-body control and stability principles?
-- **III. ROS 2 Ecosystem**: Are all software components designed as ROS 2 packages with standard interfaces?
-- **IV. URDF for Humanoids**: Is the robot model defined in a modular URDF?
-- **V. Digital Twin Simulation**: Is a high-fidelity digital twin included for testing?
-- **VI. Advanced Sensor Integration**: Does the system integrate LiDAR, depth cameras, and an IMU?
-- **VII. NVIDIA Isaac Sim Integration**: If high-fidelity simulation is needed, is Isaac Sim used?
-- **VIII. Autonomous Navigation**: Does the navigation stack use VSLAM and Nav2?
-- **IX. Vision-Language-Action Systems**: Is the architecture centered around a VLA model?
-- **X. Voice Command Interface**: Is a Whisper-based voice interface included?
-- **XI. Natural-Language Cognitive Planning**: Is high-level planning driven by a natural language engine?
-- **XII. Autonomous Humanoid Capstone**: Does this work directly contribute to the final capstone project?
+- **I. Grounded Answers & Sources**: Does the plan enforce contextual grounding and include sources in responses?
+- **II. Mode Discipline (RAG vs Selected Text)**: Does it keep RAG answers to retrieved chunks and selected-text answers to provided spans?
+- **III. Book-Only Knowledge Base**: Are all knowledge inputs sourced from the Docusaurus book markdown?
+- **IV. Indexing & Metadata Integrity**: Does the plan maintain heading-based chunking with route/heading/anchor/chunk_id metadata and a rebuild/upsert command to Qdrant?
+- **V. Frontend UX & Chat Surface**: Is the chat a mobile-first floating button/drawer (desktop) and bottom sheet (mobile) with mode toggle, selected-text preview, sources, and clear loading/error states?
+- **VI. Non-Negotiable Stack & Deployment**: Does it use Docusaurus (GitHub Pages), FastAPI, Qdrant Cloud, Neon Postgres, and (if used) better-auth?
+- **VII. Security & Secrets Hygiene**: Are secrets kept out of the frontend and data collection minimized?
+- **VIII. Quality, Operability & README**: Does the plan keep GitHub Pages live, document setup/env/indexing/deploy/troubleshooting, and ensure responsive UI with explicit states?
+- **IX. Personalization & Urdu (Bonus Features)**: If implemented, does it collect minimal signup background, support personalize/revert, and Urdu toggles preserving code blocks?
+- **X. Compliance & Change Management**: Are deviations documented with justification, review, and migration steps?
 
 ## Project Structure
 
